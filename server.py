@@ -28,8 +28,16 @@ while True:
     data = client_socket.recv(1024)
     # sendall() -> send all data
     client_socket.sendall(data)
-    
+
     client_socket.close()
+
+# s
+# └── Listening socket
+#     Lifetime: server lifetime
+
+# client_socket
+# └── Connection socket
+#     Lifetime: one client connection
 
 
 
