@@ -27,7 +27,7 @@ while True:
     try: 
     # recv() -> receive data from the client
         data = client_socket.recv(1024)
-        # sendall() -> send all data
+        # sendall() -> send all dataecho "# test" >> server.py
         client_socket.sendall(data)
     except Exception as e:
         print(f"Error occurred: {e}")
@@ -49,4 +49,3 @@ while True:
 
 
 
-# test
