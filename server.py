@@ -21,15 +21,18 @@ while True:
     # conn, addr -> socket, address
     client_socket, client_address = s.accept()
     print(f"Connected by {client_address}")
-    
+
+     
     # Handle client...
-
+    try: 
     # recv() -> receive data from the client
-    data = client_socket.recv(1024)
-    # sendall() -> send all data
-    client_socket.sendall(data)
-
-    client_socket.close()
+        data = client_socket.recv(1024)
+        # sendall() -> send all data
+        client_socket.sendall(data)
+    except Exception as e:
+        print(f"Error occurred: {e}")
+    finally:
+        client_socket.close()
 
 # s
 # └── Listening socket
@@ -46,3 +49,4 @@ while True:
 
 
 
+# test
